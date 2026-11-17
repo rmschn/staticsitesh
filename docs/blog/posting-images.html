@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Posting Images and Code · My Personal Site</title>
+  <meta name="description" content="How images and code blocks look inside a blog entry.">
+  <meta name="generator" content="build.sh">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">My Personal Site</a>
+      <nav class="site-nav" aria-label="Main navigation"><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a class="active" aria-current="page" href="../blog/index.html">Blog</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <article class="entry entry-full">
+      <h1 class="entry-title">Posting Images and Code</h1>
+      <p class="meta"><time datetime="2026-10-12">October 12, 2026</time></p>
+      <div class="entry-body">
+<p>This post has no <code>&lt;!--more--&gt;</code> marker, so the snippet is just the first paragraph. That is the default behaviour, and it is usually all you need.</p>
+<h2>Images in the body</h2>
+<p>Any image you drop into <code>assets/images/</code> can be used by name:</p>
+<p><img src="../assets/images/blog-welcome.svg" alt="A sample image"></p>
+<p>The path is rewritten automatically, so you never have to worry about whether the page is one folder deep or at the root.</p>
+<h2>Code</h2>
+<p>Fenced code blocks are rendered as-is:</p>
+<pre><code>
+./build.sh
+</code></pre>
+<p>Inline code like <code>config.sh</code> is styled subtly so it does not distract.</p>
+<blockquote><p>Quotes are supported too, and pick up an accent border from your theme.</p></blockquote>
+<p>That is the whole toolbox. Everything here is optional — write as little as a title and a sentence if that is all you want.</p>
+      </div>
+      <p class="back-link"><a href="index.html">&larr; Back to Blog</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 My Personal Site. Hand-written content, built with a small shell script.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* style.css — structural styles.
+   Colors/fonts live in theme.css (generated from config.sh).
+   Defaults below are used if theme.css is ever missing. */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --text: #1f2937;
+  --muted: #5b6472;
+  --primary: #2563eb;
+  --primary-contrast: #ffffff;
+  --link: #1d4ed8;
+  --border: #dfe3e8;
+  --header-bg: #ffffff;
+  --radius: 10px;
+  --content-width: 72rem;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: inherit;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.25; }
+
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+img { display: block; max-width: 100%; height: auto; }
+
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+.container {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: .5rem 1rem;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+/* Header ---------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+  padding: .7rem 0;
+}
+
+.site-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-title:hover { color: var(--primary); text-decoration: none; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  display: block;
+  padding: .45rem .85rem;
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-nav a:hover { background: var(--surface); color: var(--primary); text-decoration: none; }
+.site-nav a.active { background: var(--primary); color: var(--primary-contrast); }
+
+/* Home ------------------------------------------------------------------ */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 0 2rem;
+}
+.hero-image img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 2);
+}
+.hero-text h1 {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+}
+.tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0 3rem;
+}
+.card {
+  display: block;
+  padding: 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 26px rgb(0 0 0 / .08);
+  text-decoration: none;
+}
+.card h2 { margin: 0 0 .5rem; color: var(--primary); font-size: 1.25rem; }
+.card p { margin: 0; color: var(--muted); font-size: .97rem; }
+
+/* Entries (blog + projects) -------------------------------------------- */
+
+.section-header { padding: 2.25rem 0 .5rem; }
+.section-header h1 { margin: 0 0 .35rem; font-size: clamp(1.7rem, 3vw, 2.3rem); }
+
+.entry { padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+.entry:last-child { border-bottom: 0; }
+.entry-title { margin: 0 0 .35rem; font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
+.entry-title a { color: var(--text); text-decoration: none; }
+.entry-title a:hover { color: var(--primary); text-decoration: none; }
+
+.meta { margin: 0 0 .9rem; color: var(--muted); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+
+.description { margin: 0 0 .6rem; font-weight: 600; }
+.snippet { margin: 0 0 .9rem; }
+.read-more { color: var(--primary); font-weight: 700; text-decoration: none; }
+.read-more:hover { text-decoration: underline; }
+
+.entry-cover { margin: 0 0 1.2rem; }
+.entry-cover img,
+.entry-body img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.entry-full { padding-top: 1.5rem; }
+.entry-full .entry-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+.entry-body > :first-child { margin-top: 0; }
+.entry-body h2, .entry-body h3 { margin-top: 2rem; }
+.entry-body blockquote {
+  margin: 1.25rem 0;
+  padding: .35rem 1.15rem;
+  background: var(--surface);
+  border-left: 4px solid var(--primary);
+  color: var(--muted);
+}
+.entry-body pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: var(--radius);
+}
+.entry-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .93em; }
+.entry-body :not(pre) > code {
+  padding: .1em .35em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.entry-body hr { margin: 2rem 0; border: 0; border-top: 1px solid var(--border); }
+.entry-body ul { padding-left: 1.25rem; }
+
+.back-link { margin-top: 2rem; }
+.empty { padding: 2rem 0; color: var(--muted); }
+
+/* Footer ---------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .92rem;
+}
+.site-footer p { margin: 0; }
+
+/* Mobile / small screens ------------------------------------------------ */
+
+@media (max-width: 720px) {
+  body { font-size: 1rem; }
+
+  .header-inner { justify-content: center; text-align: center; }
+  .site-nav ul { justify-content: center; }
+  .site-nav a { padding: .4rem .6rem; font-size: .9rem; }
+
+  .hero { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 1.5rem; text-align: center; }
+  .hero-text { order: 2; }
+  .menu { padding-bottom: 2rem; }
+
+  .entry { padding: 1.35rem 0; }
+  .section-header { padding-top: 1.5rem; }
+}

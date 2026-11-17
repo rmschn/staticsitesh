@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This Website · My Personal Site</title>
+  <meta name="description" content="A tiny static site generator written in shell script.">
+  <meta name="generator" content="build.sh">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">My Personal Site</a>
+      <nav class="site-nav" aria-label="Main navigation"><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a class="active" aria-current="page" href="../projects/index.html">Projects</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <article class="entry entry-full">
+      <h1 class="entry-title">This Website</h1>
+      <p class="meta"><time datetime="2026-09-20">September 20, 2026</time></p>
+      <figure class="entry-cover"><img src="../assets/images/project-site.svg" alt="A browser window illustration"></figure>
+      <div class="entry-body">
+<p>This very site is the first project. It is a few hundred lines of shell and awk that turn Markdown into plain HTML — no build tools, no dependencies, no lock files.</p>
+<h2>Why?</h2>
+<p>Static sites are wonderfully boring. There is nothing to patch, nothing to keep running, and the whole thing fits in a Git repository that any free host — GitHub Pages, DigitalOcean, Netlify — will serve without complaint.</p>
+<h2>How it works</h2>
+<p>1. Drafts live in <code>content/</code>. 2. <code>build.sh</code> reads <code>config.sh</code> for colours and site details. 3. Each Markdown file becomes a page in <code>OUTPUT_DIR</code>. 4. Static assets are copied over unchanged.</p>
+<h2>Try it</h2>
+<p>Change a colour in <code>config.sh</code>, or add a post to <code>content/blog/</code>, and run the build script. The <a href="../blog/index.html">blog</a> has more details.</p>
+      </div>
+      <p class="back-link"><a href="index.html">&larr; Back to Projects</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 My Personal Site. Hand-written content, built with a small shell script.</p>
+    </div>
+  </footer>
+</body>
+</html>

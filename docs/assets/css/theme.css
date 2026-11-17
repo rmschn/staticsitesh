@@ -1,0 +1,16 @@
+/* Generated from config.sh — edit config.sh, not this file. */
+:root {
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --text: #1f2937;
+  --muted: #5b6472;
+  --primary: #2563eb;
+  --primary-contrast: #ffffff;
+  --link: #1d4ed8;
+  --border: #dfe3e8;
+  --header-bg: #ffffff;
+  --radius: 10px;
+  --content-width: 72rem;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: inherit;
+}

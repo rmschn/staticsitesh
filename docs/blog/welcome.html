@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to the Blog · My Personal Site</title>
+  <meta name="description" content="A first post introducing the site and explaining how the blog works.">
+  <meta name="generator" content="build.sh">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">My Personal Site</a>
+      <nav class="site-nav" aria-label="Main navigation"><ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a class="active" aria-current="page" href="../blog/index.html">Blog</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <article class="entry entry-full">
+      <h1 class="entry-title">Welcome to the Blog</h1>
+      <p class="meta"><time datetime="2026-10-10">October 10, 2026</time></p>
+      <figure class="entry-cover"><img src="../assets/images/blog-welcome.svg" alt="A sample illustration for the welcome post"></figure>
+      <div class="entry-body">
+<p>This is the first post on the blog. On the blog index it shows a title, a date, a description, a cover image, and the short snippet you just read.</p>
+<p>Everything below the <code>&lt;!--more--&gt;</code> marker only appears on the full post page. That is how the blog stays scannable: each entry teases the opening, and the <strong>Continue Reading</strong> link opens the whole thing.</p>
+<h2>Adding a post</h2>
+<p>Create a new file in <code>content/blog/</code> named like <code>2026-10-20-my-post.md</code>, give it a small header, and run <code>./build.sh</code>:</p>
+<pre><code>
+Title: My Post
+Date: 2026-10-20
+Description: One line about the post.
+Image: my-photo.jpg
+
+Post text goes here.
+</code></pre>
+<p>Files are listed newest first based on their name, so the <code>YYYY-MM-DD-</code> prefix keeps everything in order.</p>
+<h2>Images</h2>
+<p>Drop an image into <code>assets/images/</code> and reference it by name. This page uses a cover image:</p>
+<p><img src="../assets/images/blog-welcome.svg" alt="A diagram from the post"></p>
+<p>You can also link between pages, for example to the <a href="../projects/index.html">projects page</a> — the build script fixes up relative paths so links work from any folder.</p>
+      </div>
+      <p class="back-link"><a href="index.html">&larr; Back to Blog</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 My Personal Site. Hand-written content, built with a small shell script.</p>
+    </div>
+  </footer>
+</body>
+</html>
